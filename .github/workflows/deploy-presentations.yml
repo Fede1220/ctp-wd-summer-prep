@@ -38,7 +38,7 @@ jobs:
         run: npm run build
         env:
           # Set base path for GitHub Pages (format: /repository-name)
-          PUBLIC_URL: /ctp-wd-summer-prep
+          PUBLIC_URL: /2025-python-summer-prep
 
       - name: Create 404.html for client-side routing
         run: cp ./presentations/dist/index.html ./presentations/dist/404.html
