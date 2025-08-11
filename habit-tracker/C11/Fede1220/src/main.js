@@ -6,9 +6,29 @@ form.addEventListener('submit', (event) => {
     const data = new FormData(event.target)
 
     const habit = {
-        habitName: data.get("habit_name"),
+        name: data.get("habit_name"),
         targetStreak: Number(data.get("target_streak"))
     }
 
     habits.push(habit)
+
+    console.log(JSON.stringify(habits))
+
+    renderHabits(habits)
 })
+
+const renderHabits = (habits) => {
+    const habitList = document.getElementById('habit_list')
+
+    // for (let i=0; i < habits.length; i++) {
+    //     const habit = habits[i]
+
+    //     const li = document.createElement('li')
+    //     li.textContent = `Habit Name: ${habit.name} - Target Streak: ${habit.targetStreak} days`
+    //     habitList.appendChild(li)
+    // }
+
+    habitList.innerHTML = habits.map(habit => {
+                return `<li>${habit.name}; ${habit.targetStreak}</li>`
+            }).join(`\n`)
+}
