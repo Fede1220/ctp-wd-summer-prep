@@ -1,6 +1,7 @@
 const form = document.getElementById('habit_form')
 
 const habits = []
+
 form.addEventListener('submit', (event) => {
     event.preventDefault()
     const data = new FormData(event.target)
